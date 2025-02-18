@@ -16,9 +16,25 @@ struct DevicesList: View {
             Button {
                 onSelect(device)
             } label: {
-                VStack(alignment: .leading) {
-                    AssignmentText(text: device.name)
-                }
+                ListItemView(device)
+            }
+        }
+    }
+    
+    private func ListItemView(_ device: DeviceData) -> some View {
+        VStack(alignment: .leading) {
+            AssignmentText(text: device.name, font: .headline)
+            if let color = device.data?.color {
+                AssignmentText(text: "Color: \(color)", font: .body)
+            }
+            if let price = device.data?.price {
+                AssignmentText(text: "Price: $\(price)", font: .body)
+            }
+            if let capacity = device.data?.capacity {
+                AssignmentText(text: "Capacity: \(capacity)", font: .body)
+            }
+            if let description = device.data?.description {
+                AssignmentText(text: "Description: \(description)", font: .body)
             }
         }
     }

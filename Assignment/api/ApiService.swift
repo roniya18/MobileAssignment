@@ -26,6 +26,7 @@ class ApiService : NSObject {
                 if (empData.isEmpty) {
                     completion([])
                 }
+                completion(empData)
             }
         }.resume()
     }

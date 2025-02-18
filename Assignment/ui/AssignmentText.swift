@@ -10,10 +10,11 @@ import SwiftUI
 
 struct AssignmentText: View {
     let text: String
+    let font: Font
 
     var body: some View {
         Text(text)
-            .font(.headline)
-            .foregroundColor(Color("#FFFFFF"))
+            .font(font)
+            .foregroundColor(.black)
     }
 }
